@@ -1,4 +1,4 @@
-package com.example.guh.ui.home;
+package com.example.guh.ui.impact;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.guh.R;
 
-public class HomeFragment extends Fragment {
+public class ImpactFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private ImpactViewModel impactViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        impactViewModel =
+                ViewModelProviders.of(this).get(ImpactViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_impact, container, false);
+        final TextView textView = root.findViewById(R.id.text_impact);
+        impactViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
